@@ -1,5 +1,5 @@
-import { auth } from "@clerk/nextjs/server";
 import type { Role } from "@/types/globals";
+import { auth } from "@clerk/nextjs/server";
 
 /**
  * Check if the user has any of the specified roles.

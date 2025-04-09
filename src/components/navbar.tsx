@@ -1,11 +1,11 @@
 import { BookUser, LockKeyhole, PlusSquare } from "lucide-react";
 import Link from "next/link";
 
+import { source_sans_3 } from "@/assets/fonts/fonts";
+import Logo from "@/components/logo";
 import { getUserId, isAnyRole } from "@/lib/clerk";
 import { cn } from "@/lib/utils";
-import Logo from "@/components/logo";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { source_sans_3 } from "@/assets/fonts/fonts";
 
 export default async function Navbar() {
   const userId = await getUserId();
@@ -17,7 +17,8 @@ export default async function Navbar() {
           <SignedOut>
             <Link
               className={cn("text-xl font-semibold", source_sans_3.className)}
-              href={"/sign-in"}>
+              href={"/sign-in"}
+            >
               Logga in
             </Link>
           </SignedOut>
@@ -30,11 +31,7 @@ export default async function Navbar() {
                   height={30}
                   className="block md:hidden"
                 />
-                <p
-                  className={cn(
-                    "hidden text-xl font-medium hover:opacity-80 md:block",
-                    source_sans_3.className
-                  )}>
+                <p className={cn("hidden text-xl font-medium hover:opacity-80 md:block", source_sans_3.className)}>
                   Adminpanel
                 </p>
               </Link>
@@ -46,11 +43,7 @@ export default async function Navbar() {
                 height={30}
                 className="block md:hidden"
               />
-              <p
-                className={cn(
-                  "hidden text-xl font-medium hover:opacity-80 md:block",
-                  source_sans_3.className
-                )}>
+              <p className={cn("hidden text-xl font-medium hover:opacity-80 md:block", source_sans_3.className)}>
                 Mina annonser
               </p>
             </Link>
@@ -64,8 +57,9 @@ export default async function Navbar() {
               <p
                 className={cn(
                   "bg-sky-600 hidden rounded-md px-4 py-[6px] text-xl font-medium text-white hover:opacity-85 md:block",
-                  source_sans_3.className
-                )}>
+                  source_sans_3.className,
+                )}
+              >
                 Skapa annons
               </p>
             </Link>
