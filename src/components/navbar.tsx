@@ -1,6 +1,8 @@
 import { BookUser, LockKeyhole, PlusSquare } from "lucide-react";
 import Link from "next/link";
 
+import { Separator } from "@/components/ui/separator";
+
 import { source_sans_3 } from "@/assets/fonts/fonts";
 import Logo from "@/components/logo";
 import { getUserId, isAnyRole } from "@/lib/clerk";
@@ -13,12 +15,11 @@ export default async function Navbar() {
     <header className="top-0 flex h-20 w-full bg-white">
       <div className="mx-auto flex h-full w-full max-w-[1920px] items-center justify-between px-4">
         <Logo />
-        <section className="flex h-full w-auto items-center space-x-3 md:space-x-4">
+        <section className="flex h-full w-auto items-center gap-x-3 md:gap-x-4">
           <SignedOut>
             <Link
               className={cn("text-xl font-semibold", source_sans_3.className)}
-              href={"/sign-in"}
-            >
+              href={"/sign-in"}>
               Logga in
             </Link>
           </SignedOut>
@@ -31,7 +32,11 @@ export default async function Navbar() {
                   height={30}
                   className="block md:hidden"
                 />
-                <p className={cn("hidden text-xl font-medium hover:opacity-80 md:block", source_sans_3.className)}>
+                <p
+                  className={cn(
+                    "hidden text-xl font-medium hover:opacity-80 md:block",
+                    source_sans_3.className
+                  )}>
                   Adminpanel
                 </p>
               </Link>
@@ -43,7 +48,11 @@ export default async function Navbar() {
                 height={30}
                 className="block md:hidden"
               />
-              <p className={cn("hidden text-xl font-medium hover:opacity-80 md:block", source_sans_3.className)}>
+              <p
+                className={cn(
+                  "hidden text-xl font-medium hover:opacity-80 md:block",
+                  source_sans_3.className
+                )}>
                 Mina annonser
               </p>
             </Link>
@@ -56,15 +65,18 @@ export default async function Navbar() {
               />
               <p
                 className={cn(
-                  "bg-sky-600 hidden rounded-md px-4 py-[6px] text-xl font-medium text-white hover:opacity-85 md:block",
-                  source_sans_3.className,
-                )}
-              >
+                  "hidden rounded-md bg-sky-600 px-4 py-[6px] text-xl font-medium text-white hover:opacity-85 md:block",
+                  source_sans_3.className
+                )}>
                 Skapa annons
               </p>
             </Link>
-            <div className="hidden h-2/5 w-[1px] bg-black bg-opacity-70 md:block md:h-1/2" />
-            <div className="hidden md:block">
+            <Separator
+              orientation="vertical"
+              decorative={true}
+              className="bg-black !h-1/2"
+            />
+            <div className="hidden md:block size-[35px]">
               <UserButton
                 appearance={{
                   elements: {
@@ -76,7 +88,7 @@ export default async function Navbar() {
                 }}
               />
             </div>
-            <div className="block md:hidden">
+            <div className="block md:hidden size-[30px]">
               <UserButton
                 appearance={{
                   elements: {
