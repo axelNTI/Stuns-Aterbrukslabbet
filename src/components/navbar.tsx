@@ -1,12 +1,11 @@
 import { BookUser, LockKeyhole, PlusSquare } from "lucide-react";
 import Link from "next/link";
 
-import { checkRole } from "@/utils/check-role";
+import { getUserId, isAnyRole } from "@/lib/clerk";
 import { cn } from "@/lib/utils";
-import { getUserId } from "@/utils/get-user-id";
 import Logo from "@/components/logo";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { source_sans_3 } from "@/app/fonts";
+import { source_sans_3 } from "@/assets/fonts/fonts";
 
 export default async function Navbar() {
   const userId = await getUserId();
@@ -23,7 +22,7 @@ export default async function Navbar() {
             </Link>
           </SignedOut>
           <SignedIn>
-            {((await checkRole("admin")) || (await checkRole("moderator"))) && (
+            {(await isAnyRole(["admin", "moderator"])) && (
               <Link href="/admin">
                 <LockKeyhole
                   strokeWidth={1}

@@ -12,6 +12,7 @@
     "format:write": "biome check --write"
   },
   "dependencies": {
+    "@clerk/localizations": "^3.13.7",
     "@clerk/nextjs": "^6.14.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
