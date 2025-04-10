@@ -1,7 +1,6 @@
 import { svSE } from "@clerk/localizations";
 import { ClerkProvider } from "@clerk/nextjs";
 
-import Navbar from "@/components/navbar";
 import "./globals.css";
 
 export default function RootLayout({
@@ -14,10 +13,7 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={svSE}>
       <html lang="sv">
-        <body className="bg-secondary">
-          <Navbar />
-          <main>{children}</main>
-        </body>
+        <body className="bg-secondary">{children}</body>
       </html>
     </ClerkProvider>
   );

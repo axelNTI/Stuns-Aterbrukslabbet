@@ -9,10 +9,10 @@ import { getUserId, isAnyRole } from "@/lib/clerk";
 import { cn } from "@/lib/utils";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
-export default async function Navbar() {
+export default async function Header() {
   const userId = await getUserId();
   return (
-    <header className="top-0 flex h-20 w-full bg-white">
+    <header className="top-0 flex h-20 w-full bg-background fixed">
       <div className="mx-auto flex h-full w-full max-w-[1920px] items-center justify-between px-4">
         <Logo />
         <section className="flex h-full w-auto items-center gap-x-3 md:gap-x-4">
