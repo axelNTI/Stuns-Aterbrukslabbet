@@ -57,7 +57,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@clerk/testing": "^1.6.6",
+    "@clerk/testing": "^1.10.11",
     "@eslint/compat": "^1.2.9",
     "@next/eslint-plugin-next": "^15.3.2",
     "@playwright/test": "^1.52.0",
