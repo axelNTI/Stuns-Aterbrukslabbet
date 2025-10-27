@@ -110,7 +110,7 @@ jobs:
         run: pnpm test --shard=${{ inputs.shard_instance }}/${{ inputs.max_shards }}
 
       - name: Upload Playwright Logs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: playwright-logs-${{ inputs.shard_instance }}
